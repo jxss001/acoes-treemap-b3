@@ -215,6 +215,21 @@ Ao contrário de soluções pagas como Status Invest, Kinvo e TradeMap, este pro
 ✅ **Privacidade Total** - roda localmente, sem tracking  
 ✅ **Docker-ready** - deploy simplificado  
 
+
+### ⚠️ Sobre a Fonte de Dados
+
+Este projeto utiliza a biblioteca `yfinance` para obter cotações do Yahoo Finance. 
+Importante saber:
+
+- **Não é API oficial**: Usa web scraping (pode ter instabilidades ocasionais)
+- **Gratuito mas limitado**: ~100 requisições/hora (suficiente para uso pessoal)
+- **Dados com 15min de atraso**: Adequado para acompanhamento, não trading
+- **Alternativas**: Adaptável para Alpha Vantage, Twelve Data ou EODHD
+
+Para uso comercial ou produção, recomenda-se migrar para uma API oficial paga.
+
+
+
 ---
 
 **Desenvolvido com ❤️ para investidores da B3**
