@@ -259,16 +259,16 @@ def create_treemap(df, view_type='day'):
         arrow = "▲" if row[change_pct_col] >= 0 else "▼"
         sign = "+" if row[change_pct_col] >= 0 else ""
         if view_type == 'total':
-            label = (f"<b style='font-size:18px'>{row['ticker']} {arrow}</b><br><br>"
-                    f"<span style='font-size:24px'><b>R$ {row['price']:.2f}</b></span><br>"
+            label = (f"<b style='font-size:16px'>{row['ticker']} {arrow}</b><br><br>"
+                    f"<span style='font-size:22px'><b>R$ {row['price']:.2f}</b></span><br>"
                     f"<span style='font-size:13px; opacity:0.85'>Med: R$ {row['avg_price']:.2f}</span><br>"
-                    f"<span style='font-size:16px; font-weight:bold'>{sign}{row[change_pct_col]:.2f}%</span><br>"
-                    f"<span style='font-size:13px'>({sign}R$ {row[change_value_col]:.2f})</span>")
+                    f"<span style='font-size:15px; font-weight:bold'>{sign}{row[change_pct_col]:.2f}%</span><br>"
+                    f"<span style='font-size:12px'>({sign}R$ {row[change_value_col]:.2f})</span>")
         else:
-            label = (f"<b style='font-size:18px'>{row['ticker']} {arrow}</b><br><br>"
-                    f"<span style='font-size:24px'><b>R$ {row['price']:.2f}</b></span><br>"
-                    f"<span style='font-size:16px; font-weight:bold'>{sign}{row[change_pct_col]:.2f}%</span><br>"
-                    f"<span style='font-size:13px'>({sign}R$ {row[change_value_col]:.2f})</span>")
+            label = (f"<b style='font-size:16px'>{row['ticker']} {arrow}</b><br><br>"
+                    f"<span style='font-size:22px'><b>R$ {row['price']:.2f}</b></span><br>"
+                    f"<span style='font-size:15px; font-weight:bold'>{sign}{row[change_pct_col]:.2f}%</span><br>"
+                    f"<span style='font-size:12px'>({sign}R$ {row[change_value_col]:.2f})</span>")
         labels.append(label)
 
     fig = go.Figure(go.Treemap(
@@ -321,10 +321,10 @@ def create_treemap(df, view_type='day'):
             text=f'<b>{title_text}</b>',
             x=0.5,
             xanchor='center',
-            font=dict(size=24, color='#e0e0e0')
+            font=dict(size=23, color='#e0e0e0')
         ),
-        margin=dict(t=70, l=10, r=110, b=10),
-        height=900,
+        margin=dict(t=65, l=10, r=110, b=10),
+        height=820,
         paper_bgcolor='#1e1e1e',
         plot_bgcolor='#1e1e1e',
         font=dict(color='#e0e0e0')
@@ -380,8 +380,8 @@ def main_layout():
                         html.Img(
                             src=app.get_asset_url('foco.jpg'),
                             style={
-                                'height': '60px',
-                                'width': '60px',
+                                'height': '55px',
+                                'width': '55px',
                                 'border-radius': '10px',
                                 'margin-right': '15px',
                                 'box-shadow': '0 2px 8px rgba(102,187,106,0.3)'
@@ -389,13 +389,13 @@ def main_layout():
                         ),
                         html.H1(
                             'Mapa de Ações',
-                            style={'display': 'inline-block', 'color': '#66bb6a', 'margin': '0', 'vertical-align': 'middle'}
+                            style={'display': 'inline-block', 'color': '#66bb6a', 'margin': '0', 'vertical-align': 'middle', 'font-size': '30px'}
                         ),
                         html.Img(
                             src=app.get_asset_url('foco.jpg'),
                             style={
-                                'height': '60px',
-                                'width': '60px',
+                                'height': '55px',
+                                'width': '55px',
                                 'border-radius': '10px',
                                 'margin-left': '15px',
                                 'box-shadow': '0 2px 8px rgba(102,187,106,0.3)'
@@ -432,8 +432,8 @@ def main_layout():
                             }),
                             href='/logs'
                         )
-                    ], style={'position': 'absolute', 'right': '30px', 'top': '30px', 'display': 'flex'})
-                ], style={'position': 'relative', 'margin-bottom': '10px'}),
+                    ], style={'position': 'absolute', 'right': '30px', 'top': '27px', 'display': 'flex'})
+                ], style={'position': 'relative', 'margin-bottom': '8px'}),
 
                 html.Div([
                     dbc.Badge(
@@ -447,10 +447,46 @@ def main_layout():
                         color='success',
                         style={'font-size': '14px', 'padding': '8px 15px', 'font-weight': 'bold'}
                     )
-                ], style={'text-align': 'center', 'margin-bottom': '20px'}),
+                ], style={'text-align': 'center', 'margin-bottom': '18px'}),
 
-                dcc.Graph(id='treemap', config={'displayModeBar': False})
-            ], style={'padding': '25px'})
+                html.Div([
+                    dcc.Graph(id='treemap', config={'displayModeBar': False}),
+
+                    # Botao de navegacao DENTRO da moldura, canto inferior direito
+                    html.Div([
+                        html.Button('⬅', id='btn-prev', n_clicks=0, style={
+                            'border': 'none',
+                            'background': '#1976d2',
+                            'color': 'white',
+                            'border-radius': '50%',
+                            'width': '45px',
+                            'height': '45px',
+                            'font-size': '20px',
+                            'cursor': 'pointer',
+                            'box-shadow': '0 4px 12px rgba(25,118,210,0.4)',
+                            'margin-right': '5px'
+                        }),
+                        html.Button('➡', id='btn-next', n_clicks=0, style={
+                            'border': 'none',
+                            'background': '#1976d2',
+                            'color': 'white',
+                            'border-radius': '50%',
+                            'width': '45px',
+                            'height': '45px',
+                            'font-size': '20px',
+                            'cursor': 'pointer',
+                            'box-shadow': '0 4px 12px rgba(25,118,210,0.4)'
+                        })
+                    ], style={
+                        'position': 'absolute',
+                        'bottom': '25px',
+                        'right': '25px',
+                        'display': 'flex',
+                        'gap': '5px',
+                        'z-index': '1000'
+                    })
+                ], style={'position': 'relative'})
+            ], style={'padding': '20px'})
         ], style={'margin-top': '10px', 'border-radius': '15px'}),
 
         dbc.Modal([
@@ -661,7 +697,7 @@ def update_alerts(data):
             alert['message'],
             color=alert['type'],
             dismissable=True,
-            duration=20000,  # Auto-dismiss apos 20 segundos
+            duration=15000,
             className='mb-2',
             style={'font-size': '14px', 'font-weight': 'bold'}
         ) for alert in alerts[:5]
@@ -716,7 +752,6 @@ def save_time_settings(n_clicks, daily, weekly, monthly, daily_enabled, weekly_e
     if n_clicks == 0:
         return DEFAULT_TIMES, DEFAULT_ENABLED, '', {}
 
-    # Validacao: pelo menos uma tela deve estar habilitada
     if not daily_enabled and not weekly_enabled and not monthly_enabled:
         return dash.no_update, dash.no_update, '⚠️ Pelo menos uma tela deve estar habilitada!', {'color': '#f44336', 'margin-top': '10px'}
 
@@ -768,12 +803,27 @@ def load_time_settings(pathname, settings, enabled):
 
 @app.callback(
     Output('view', 'data'), 
-    [Input('rotate', 'n_intervals')], 
+    [Input('rotate', 'n_intervals'), Input('btn-prev', 'n_clicks'), Input('btn-next', 'n_clicks')], 
     [State('view', 'data'), State('time-settings', 'data'), State('enabled-settings', 'data')]
 )
-def rotate(n, current_view, settings, enabled):
+def rotate_or_navigate(n_intervals, prev_clicks, next_clicks, current_view, settings, enabled):
+    ctx = callback_context
+
+    if not ctx.triggered:
+        return current_view
+
+    trigger_id = ctx.triggered[0]['prop_id'].split('.')[0]
+
     rotation_map = build_rotation_map(settings, enabled)
-    index = n % len(rotation_map)
+
+    # Navegacao manual via botoes
+    if trigger_id == 'btn-prev':
+        return (current_view - 1) % 3
+    elif trigger_id == 'btn-next':
+        return (current_view + 1) % 3
+
+    # Rotacao automatica normal
+    index = n_intervals % len(rotation_map)
     return rotation_map[index]
 
 
@@ -788,10 +838,8 @@ def update_countdown(n, settings, enabled):
     seconds_in_cycle = n % total_cycle
     position = seconds_in_cycle // 5
 
-    # Determina em qual tela estamos
     current_view = rotation_map[position]
 
-    # Conta quantos slots restam da tela atual
     remaining_slots = 0
     for i in range(position, len(rotation_map)):
         if rotation_map[i] == current_view:
@@ -799,7 +847,6 @@ def update_countdown(n, settings, enabled):
         else:
             break
 
-    # Calcula segundos restantes
     seconds_within_slot = seconds_in_cycle % 5
     remaining = (remaining_slots * 5) - seconds_within_slot
 
@@ -967,4 +1014,4 @@ def delete_stock(n_clicks_list):
 
 
 if __name__ == '__main__':
-    app.run_server(host='0.0.0.0', port=8050, debug=True)
+    app.run_server(host='0.0.0.0', port=8050, debug=False)
